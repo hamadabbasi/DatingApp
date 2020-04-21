@@ -42,6 +42,7 @@ namespace DatingApp.api.Controllers
         [HttpPost("login")]
         public async Task<IActionResult> Login(UserForLoginDtos userForLoginDtos)
         {
+//throw new System.Exception("Custom exception...");
             // Validation here
 
             userForLoginDtos.Username = userForLoginDtos.Username.ToLower();
@@ -74,6 +75,8 @@ namespace DatingApp.api.Controllers
                 token = tokenHandler.WriteToken(token)
             }
             );
+
+            
         }
 
     }
